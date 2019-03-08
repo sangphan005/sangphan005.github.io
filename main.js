@@ -15,7 +15,7 @@ socket.on('DANH_SACH_ONLINE', arrUserInfo => {
     //console.log(user);
     const {ten, peerId} = user;
     $('#ulUser').append(`<li id="${peerId}">${ten}</li>`);
-    $('#ulUser').append(`<video id ="${remoteStreamId}" width="300" controls></video>`)
+    //$('#ulUser').append(`<video id ="${remoteStreamId}" width="300" controls></video>`)
   });
 
   socket.on('AI_DO_NGAT_KET_NOI', peerId => {
