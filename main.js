@@ -58,7 +58,7 @@ $('#btnCall').click( () => {
   .then(stream => {
     playStream('localStream', stream);
     const call = peer.call(id, stream);
-    call.on('stream', remoteStream => playStream('remoteStreamId', remoteStream));
+    call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
   });
 });
 
@@ -68,7 +68,7 @@ peer.on('call', call => {
   .then(stream => {
     call.answer(stream);
     playStream('localStream', stream);
-    call.on('stream', remoteStream => playStream('remoteStreamId', remoteStream));
+    call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
   });
 });
 
