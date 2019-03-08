@@ -7,23 +7,23 @@
         <script src="socket.io.js"></script>
     </head>
     <body>
-      <div id="div-chat">
-        <p>Online User: </p>
-        <ul id="ulUser">
-        </ul>
-          <h3 id="my-peer"> Your id: </h3>
-          <video id="localStream" width="300" controls></video>
-          <br /><br />
-          <video id="remoteStream" width="300" controls></video>
-          <br /><br />
-          <input type="text" id="remoteId" placeholder="Remote ID">
-          <button id="btnCall">Call</button>
-      </div>
-      <div id="div-dang-ky">
-        <br> </br>
-        <input type="text" id="txtUsername" placeholder="Enter your username">
-        <button id="btnSignUp">Sign Up</button>
-      </div>
+        <div id="div-chat">
+            <p>Online user:</p>
+            <ul id="ulUser">
+            </ul>
+            <h3 id="my-peer">Your Id: </h3>
+            <video id="localStream" width="300" controls></video>
+            <br /><br />
+            <video id="remoteStream" width="300" controls></video>
+            <br /><br />
+            <input type="text" id="remoteId" placeholder="Remote ID">
+            <button id="btnCall">Call</button>
+        </div>
+        <div id="div-dang-ky">
+            <br /><br />
+            <input type="text" id="txtUsername" placeholder="Enter your username">
+            <button id="btnSignUp">Sign Up</button>
+        </div>
     </body>
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/peerjs@0.3.20/dist/peer.min.js"></script>
