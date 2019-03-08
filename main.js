@@ -1,5 +1,5 @@
 //const socket = io('http://localhost:3000');
-  const socket = io('https://sangphan005.github.io/');
+  const socket = io('https://sangphan005.github.io');
 $('#div-chat').hide();
 
 socket.on('DANH_SACH_ONLINE', arrUserInfo => {
@@ -41,7 +41,7 @@ function playStream(idVideoTag, stream)
 //.then(stream => playStream('localStream',stream));
 const peer = new Peer(
   { key: 'peerjs',
-   host: 'https://sangpeer.herokuapp.com/',
+   host: 'https://sangpeer.herokuapp.com',
    secure: true,
    port: 443 });
 
