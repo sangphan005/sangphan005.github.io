@@ -1,4 +1,4 @@
-const socket = io('https://sangstream.herokuapp.com/');
+const socket = io('http://localhost:3000');
 
 $('#div-chat').hide();
 
@@ -15,6 +15,7 @@ socket.on('DANH_SACH_ONLINE', arrUserInfo => {
     //console.log(user);
     const {ten, peerId} = user;
     $('#ulUser').append(`<li id="${peerId}">${ten}</li>`);
+    $('#ulUser').append(`<video id ="${remoteStreamId}" width="300" controls></video>`)
   });
 
   socket.on('AI_DO_NGAT_KET_NOI', peerId => {
@@ -40,7 +41,7 @@ function playStream(idVideoTag, stream)
 
 //openStream()
 //.then(stream => playStream('localStream',stream));
-const peer = new Peer( {key: 'tkv5g2acaree9udi'} );
+const peer = new Peer( {key: 'peerjs', host: 'https://sangpeer.herokuapp.com/', secure: true, port: 443} );
 
 peer.on('open', id => {
    $('#my-peer').append(id);
@@ -57,7 +58,7 @@ $('#btnCall').click( () => {
   .then(stream => {
     playStream('localStream', stream);
     const call = peer.call(id, stream);
-    call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
+    call.on('stream', remoteStream => playStream('remoteStreamId', remoteStream));
   });
 });
 
@@ -67,7 +68,7 @@ peer.on('call', call => {
   .then(stream => {
     call.answer(stream);
     playStream('localStream', stream);
-    call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
+    call.on('stream', remoteStream => playStream('remoteStreamId', remoteStream));
   });
 });
 
