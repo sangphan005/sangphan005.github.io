@@ -45,7 +45,7 @@ const peer = new Peer({
     host: 'sangpeer.herokuapp.com',
     secure: true,
     port: 443,
-    config: customConfig
+    //config: customConfig
 });
 
 //const peer = new Peer({key: 'tkv5g2acaree9udi'});
