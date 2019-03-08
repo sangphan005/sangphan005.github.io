@@ -3,6 +3,26 @@ const socket = io('https://sangphan005.github.io');
 //const socket = io('https://sangpeer.herokuapp.com');
 $('#div-chat').hide();
 
+let customConfig;
+
+$.ajax({
+  url: "https://service.xirsys.com/ice",
+  data: {
+    ident: "tansang",
+    secret: "718810ec-4173-11e9-887a-0242ac110003",
+    domain: "sangphan005.github.io",
+    application: "default",
+    room: "default",
+    secure: 1
+  },
+  success: function (data, status) {
+    // data.d is where the iceServers object lives
+    customConfig = data.d;
+    console.log(customConfig);
+  },
+  async: false
+});
+
 socket.on('DANH_SACH_ONLINE', arrUserInfo => {
     $('#div-chat').show();
     $('#div-dang-ky').hide();
@@ -45,7 +65,7 @@ const peer = new Peer({
     host: 'sangpeer1997.herokuapp.com',
     secure: true,
     port: 443,
-    //config: customConfig
+    config: customConfig
 });
 
 //const peer = new Peer({key: 'tkv5g2acaree9udi'});
