@@ -1,5 +1,5 @@
-const socket = io('http://localhost:3000');
-
+//const socket = io('http://localhost:3000');
+  const socket = io('https://sangphan005.github.io/');
 $('#div-chat').hide();
 
 socket.on('DANH_SACH_ONLINE', arrUserInfo => {
