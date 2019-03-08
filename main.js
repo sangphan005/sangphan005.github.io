@@ -83,3 +83,4 @@ $('#ulUser').on('click', 'li', function() {
         const call = peer.call(id, stream);
         call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
     });
+});
